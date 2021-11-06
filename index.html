@@ -6,26 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   <script src="main.js"></script>
 </head>
 
 <body>
   <div>
-    <input type="text" placeholder="請輸入抽籤內容">
-    <button>輸入</button>
+    <input type="text" placeholder="請輸入抽籤內容" id="drawStrawsContent">
+    <button onclick="clickToInput()">輸入</button>
+  </div>
+
+
+  <div>
+    <ul id="printList">
+    </ul>
   </div>
 
   <div>
-    <div>
-      <ul>
-      </ul>
-    </div>
-
-    <div>
-      <span>抽出<input type="number">個</span>
-      <button>抽！</button>
-    </div>
+    <span>抽出<input type="number">個</span>
+    <button>抽！</button>
   </div>
+
 </body>
 
 </html>
