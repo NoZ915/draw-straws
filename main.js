@@ -6,3 +6,4 @@ clickToInput = function () {
   printList.append(newLI)
   document.getElementById("drawStrawsContent").value = ""
 }
+console.log("hi")
