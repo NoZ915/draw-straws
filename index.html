@@ -13,7 +13,7 @@
 <body>
   <div>
     <input type="text" placeholder="請輸入抽籤內容" id="drawStrawsContent">
-    <button onclick="clickToInput()">輸入</button>
+    <button onclick="clickToInput()" class="button">輸入</button>
   </div>
 
 
@@ -23,9 +23,13 @@
   </div>
 
   <div>
-    <span>抽出<input type="number">個</span>
-    <button>抽！</button>
+    <span>抽出<input type="number" id="numberOfWinner" min="0">個</span>
+    <button onclick="clickToStart()" class="button">抽！</button>
+    <ul id="printWinner">
+    </ul>
   </div>
+
+  <button onclick="clearIt()">清空</button>
 
 </body>
 
