@@ -1,15 +1,15 @@
 var listArray = []
 
 var clickToInput = function () {
-  const drawStrawsContent = $("#drawStrawsContent").val()
-  const printList = $("#printList")
+  const drawStrawsContent = $("#draw-straws-content").val()
+  const printList = $("#print-list")
   const newLI = document.createElement("li")
 
 
   if(drawStrawsContent.length != ""){
     newLI.append(drawStrawsContent)
     printList.append(newLI)
-    document.getElementById("drawStrawsContent").value = ""
+    document.getElementById("draw-straws-content").value = ""
     listArray.push(drawStrawsContent)
     console.log(listArray)
   }else{
@@ -18,9 +18,9 @@ var clickToInput = function () {
 }
 
 var clickToStart=function(){
-  const numberOfWinner = $("#numberOfWinner").val()
-  const printWinner = $("#printWinner")
-  const button = $(".button")
+  const numberOfWinner = $("#number-of-winner").val()
+  const printWinner = $("#print-winner")
+  const button = $(".disabled-button")
 
   if (numberOfWinner<=listArray.length){
     for(var i=0; i < numberOfWinner; i++){
@@ -39,41 +39,11 @@ var clickToStart=function(){
 
 var clearIt = function(){
   const button = $(".button")
-  const printList = $("#printList")
-  const printWinner = $("#printWinner")
+  const printList = $("#print-list")
+  const printWinner = $("#print-winner")
 
   button.attr("disabled", false)
   printList.empty()
   printWinner.empty()
-  document.getElementById("numberOfWinner").value = ""
+  document.getElementById("number-of-winner").value = ""
 }
-
-// var winnerArray = []
-// var clickToStart=function(){
-//   const numberOfWinner = $("#numberOfWinner").val()
-//   const printWinner = $("#printWinner")
-
-//   if (numberOfWinner<=listArray.length){
-//     for(var i=0; i < numberOfWinner; i++){
-//       const randomNumber = parseInt(Math.random()*(listArray.length-1))
-//       if($.inArray(randomNumber, winnerArray) === -1){
-//         const newLI = document.createElement("li")
-//         winnerArray.push(randomNumber)
-//         newLI.append(listArray[randomNumber])
-//         printWinner.append(newLI)
-//       }else{
-//         i--
-//       }
-//     }
-    
-//   }else{
-//     alert("抽出數量不要大於抽籤內容！")
-//   }
-
-//   for(var j=0; j<=listArray.length; j++){
-//     if($.inArray(LI, listArray) === -1){
-//       listArray.push(LI)
-//       console.log("HI")
-//     }
-//   }
-// }

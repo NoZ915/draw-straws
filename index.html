@@ -6,30 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   <script src="main.js"></script>
 </head>
 
 <body>
-  <div>
-    <input type="text" placeholder="請輸入抽籤內容" id="drawStrawsContent">
-    <button onclick="clickToInput()" class="button">輸入</button>
+  <main>
+    <div class="pannel draw-straws_container">
+      <input type="text" placeholder="請輸入抽籤內容" id="draw-straws-content">
+      <button onclick="clickToInput()" class="button disabled-button">輸入</button>
+      <div class="list_container">
+        <ul id="print-list">
+        </ul>
+      </div>
+    </div>
+
+    <div class="pannel winner_container">
+      <span>抽出<input type="number" id="number-of-winner" min="0">個</span>
+      <button onclick="clickToStart()" class="button white disabled-button">抽！</button>
+      <ul id="print-winner">
+      </ul>
+    </div>
+  </main>
+
+  <div class="clear-button_container">
+    <button onclick="clearIt()" class="button blue">重新輸入</button>
   </div>
-
-
-  <div>
-    <ul id="printList">
-    </ul>
-  </div>
-
-  <div>
-    <span>抽出<input type="number" id="numberOfWinner" min="0">個</span>
-    <button onclick="clickToStart()" class="button">抽！</button>
-    <ul id="printWinner">
-    </ul>
-  </div>
-
-  <button onclick="clearIt()">清空</button>
 
 </body>
 
