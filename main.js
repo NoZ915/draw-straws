@@ -6,44 +6,37 @@ var clickToInput = function () {
   const newLI = document.createElement("li")
 
 
-  if(drawStrawsContent.length != ""){
+  if (drawStrawsContent.length != "") {
     newLI.append(drawStrawsContent)
     printList.append(newLI)
     document.getElementById("draw-straws-content").value = ""
     listArray.push(drawStrawsContent)
     console.log(listArray)
-  }else{
+  } else {
     alert("請輸入內容")
   }
 }
 
-var clickToStart=function(){
+var clickToStart = function () {
   const numberOfWinner = $("#number-of-winner").val()
   const printWinner = $("#print-winner")
   const button = $(".disabled-button")
 
-  if (numberOfWinner<=listArray.length){
-    for(var i=0; i < numberOfWinner; i++){
+  if (numberOfWinner <= listArray.length) {
+    for (var i = 0; i < numberOfWinner; i++) {
       const newLI = document.createElement("li")
-      const randomNumber = parseInt(Math.random()*(listArray.length-1))
+      const randomNumber = parseInt(Math.random() * (listArray.length - 1))
 
       newLI.append(listArray[randomNumber])
       printWinner.append(newLI)
-      listArray.splice(randomNumber,1)
+      listArray.splice(randomNumber, 1)
     }
     button.attr("disabled", true)
-  }else{
+  } else {
     alert("抽出數量不要大於抽籤內容！")
   }
 }
 
-var clearIt = function(){
-  const button = $(".button")
-  const printList = $("#print-list")
-  const printWinner = $("#print-winner")
-
-  button.attr("disabled", false)
-  printList.empty()
-  printWinner.empty()
-  document.getElementById("number-of-winner").value = ""
+var clearIt = function () {
+  window.location.reload()
 }
